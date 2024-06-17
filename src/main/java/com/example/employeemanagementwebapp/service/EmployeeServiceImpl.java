@@ -2,7 +2,9 @@ package com.example.employeemanagementwebapp.service;
 
 import com.example.employeemanagementwebapp.model.Employee;
 import com.example.employeemanagementwebapp.repository.EmployeeRepository;
+import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,7 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteById(long id) {
         this.employeeRepository.deleteById(id);
     }
-
+    @Override
+    public Page<Employee> findPaginated(int pageNo,int pageSize,String sortField,String sortDirection) {
+        Sort sort =
+    }
 
 
 }
