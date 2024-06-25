@@ -1,5 +1,6 @@
 package com.example.employeemanagementwebapp.controller;
 
+import com.example.employeemanagementwebapp.model.Employee;
 import com.example.employeemanagementwebapp.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,4 +19,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/showNewEmployeeForm")
+    public String showNewEmployeeForm(Model model) {
+        Employee employee = new Employee();
+        model.addAttribute("employee",employee);
+        return "new_employee";
+    }
 }
